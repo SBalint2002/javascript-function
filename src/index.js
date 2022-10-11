@@ -11,4 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
         t5 = t.filter(e => e%5==0);
         console.log(t5);
     });
+    document.getElementById("hozzaad").addEventListener('click', () => {
+        t5.push(parseInt(document.getElementById("number").value));
+        console.log(t5);
+    })
 });
+
+class Szazlabu{
+    #labakSzama;
+    constructor(labakszama){
+        this.labakszama = labakszama;
+    }
+    toString(){
+        return "N lábú százlábú";
+    }
+}
+
+function labakbolSzazlabuk(t = []){
+    return t.map(e => new Szazlabu(e));
+}
